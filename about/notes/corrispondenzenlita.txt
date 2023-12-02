@@ -1,0 +1,3 @@
+Corrispondenze tra vecchio html in NL e nuovo in Ita:
+
+indexita -> indexita (Homepage) REPLACED
