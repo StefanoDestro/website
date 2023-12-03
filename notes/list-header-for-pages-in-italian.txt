@@ -8,7 +8,7 @@
                         </li>
                         <li id="menu-item-6148"
                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6148"><a
-                            href="../portfolio/index.html" data-font='third_level/overline_2'>PORTFOLIO</a></li>
+                            href="../portfolio/index-wedding.html" data-font='third_level/overline_2'>PORTFOLIO</a></li>
                         <li id="menu-item-3656"
                           class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3656"><a
                             href="../about/index.html" data-font='third_level/overline_2'>ABOUT</a></li>
@@ -103,9 +103,9 @@
                       </style>
 
                       <img class="flo-header__logo-image flo-header__logo-image--default" width=auto height=auto
-                        src="images/logos/logo_trasparente_chiaro.png" alt="angelabloemsaat.com" />
+                        src="images/logos/logo_trasparente_chiaro.png" alt="stefanodestro.com" />
                       <img class="flo-header__logo-image flo-header__logo-image--sticky" width=auto height=auto
-                        src="images/logos/logo_trasparente_chiaro.png" alt="angelabloemsaat.com" />
+                        src="images/logos/logo_trasparente_chiaro.png" alt="stefanodestro.com" />
                       <img class="flo-header__logo-image flo-header__logo-image--light" width=auto height=auto
                         src="images/logos/logo_trasparente_chiaro.png" alt="stefanodestro.com" />
                     </a>
@@ -134,9 +134,9 @@
                 <div class="flo-header-mobile__spacer"></div>
                 <a href="../index.html" class="flo-header-mobile__logo">
                   <img class="flo-header-mobile__logo-image flo-header-mobile__logo-image--default" width="150"
-                    height="100" src="images/logos/logo_trasparente_chiaro.png" alt="angelabloemsaat.com" />
+                    height="100" src="images/logos/logo_trasparente_chiaro.png" alt="stefanodestro.com" />
                   <img class="flo-header-mobile__logo-image flo-header-mobile__logo-image--light" width="150"
-                    height="100" src="images/logos/logo_trasparente_chiaro.png" alt="angelabloemsaat.com" />
+                    height="100" src="images/logos/logo_trasparente_chiaro.png" alt="stefanodestro.com" />
                 </a>
                 <div class="flo-header-mobile__menu-trigger">
                   <i class="flo-icon-menu-left"></i>
@@ -177,7 +177,7 @@
                   <div class="flo-mobile-menu__spacer"></div>
                   <a href="../index.html" class="flo-header-mobile__logo">
                     <img class="flo-header-mobile__logo-image flo-header-mobile__logo-image--popup" width="150"
-                      height="100" src="images/logos/logo_trasparente_chiaro.png" alt="angelabloemsaat.com" />
+                      height="100" src="images/logos/logo_trasparente_chiaro.png" alt="stefanodestro.com" />
                   </a>
                   <div class="flo-mobile-menu__close">
                     <i class="flo-icon-close"></i>
@@ -189,7 +189,7 @@
                     <a href="../index.html" data-font='third_level/navigation'>HOME</a>
                   </li>
                   <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-6148"><a
-                      href="../portfolio/index.html" data-font='third_level/navigation'>PORTFOLIO</a></li>
+                      href="../portfolio/index-wedding.html" data-font='third_level/navigation'>PORTFOLIO</a></li>
                   <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3656"><a
                       href="../about/index.html" data-font='third_level/navigation'>ABOUT</a></li>
                   <!--<li
