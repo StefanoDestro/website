@@ -1,0 +1,19 @@
+.image-gallery {
+    column-count: 3;
+    column-gap: 5px;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 5px;
+    break-inside: avoid; /* Prevents images from being split across columns */
+}
+
+/* Responsive layout for mobile */
+@media (max-width: 600px) {
+    .image-gallery {
+        column-count: 1;
+    }
+}
