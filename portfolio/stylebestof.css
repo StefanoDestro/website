@@ -8,7 +8,7 @@
     height: auto;
     display: block;
     margin-bottom: 5px;
-    break-inside: avoid; /* Prevents images from being split across columns */
+   /* break-inside: avoid; /* Prevents images from being split across columns */
 }
 
 /* Responsive layout for mobile */

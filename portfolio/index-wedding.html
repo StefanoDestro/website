@@ -6662,8 +6662,8 @@ opacity: 0!important;
               </h2>
 
               <div class="flo-block-category-switcher-1__links-list">
-                <!--<a href="index.html" class="flo-block-category-switcher-1__category "
-                  data-font='third_level/overline_2'>All</a>-->
+                <a href="index.html" class="flo-block-category-switcher-1__category "
+                  data-font='third_level/overline_2'>60 SECONDS</a>
                 <a href="index-wedding.html?categ=wedding"
                   class="flo-block-category-switcher-1__category flo-block-category-switcher-1__category--active"
                   data-font='third_level/overline_2'>WEDDING</a>
@@ -6671,8 +6671,8 @@ opacity: 0!important;
                   data-font='third_level/overline_2'>BOUDOIR</a>-->
                 <a href="index-couple.html?categ=coupleshoot" class="flo-block-category-switcher-1__category "
                   data-font='third_level/overline_2'>COUPLE</a>
-                <a href="index-family.html?categ=family" class="flo-block-category-switcher-1__category "
-                  data-font='third_level/overline_2'>FAMILY</a>
+                <!-- <a href="index-family.html?categ=family" class="flo-block-category-switcher-1__category "
+                  data-font='third_level/overline_2'>FAMILY</a> -->
                 <!--<a href="index340c.html?categ=underwater" class="flo-block-category-switcher-1__category "
                   data-font='third_level/overline_2'>UNDERWATER</a>-->
               </div>
@@ -6925,32 +6925,53 @@ opacity: 0!important;
 
 
 
-      <div class="flo-footer flo-footer--909 disable-appear" data-onready="flo_footer">
-        <style class='flo-core-style' data-title="flo-footer--909" media="screen">
-          .flo-footer--909 .flo-footer-instagram-area {
+      <div class="flo-footer flo-footer--314 disable-appear" data-onready="flo_footer">
+        <style class='flo-core-style' data-title="flo-footer--314" media="screen">
+          .flo-footer--314 .flo-footer-instagram-area {
             background-color: var(--scheme_1--background--default);
             color: var(--scheme_1--text--default);
             border-color: var(--scheme_1--text--default)
           }
 
-          .flo-footer--909 .flo-footer-instagram-area__images {
-            --imagesGapDesk: 0rem
+          .flo-footer--314 .flo-footer-instagram-area__images {
+            --imagesGapDesk: 0rem;
+            display: flex;
+            /* Enable Flexbox */
+            flex-wrap: wrap;
+            /* Allow items to wrap */
           }
 
-          @media (max-width:767px) {
+          @media (max-width: 767px) {
 
-            .flo-footer--909 .flo-footer-instagram-area__image:nth-last-child(-n+2),
-            .flo-footer--909 .flo-footer-instagram-area__images .img-block:nth-last-child(-n+2) {
-              display: none
+            .flo-footer--314 .flo-footer-instagram-area__image,
+            .flo-footer--314 .flo-footer-instagram-area__images .img-block {
+              width: calc(33.333%);
+              /* Adjust width */
+              margin: 0px;
+              max-width: 33.33%;
+              /* Ensure images don't overflow their container */
+              height: auto;
+              /* Maintain aspect ratio */
             }
 
-            .flo-footer--909 .flo-footer-instagram-area__images {
-              --imagesGapMob: 0rem
+            .flo-footer--314 .flo-footer-instagram-area__image:first-child {
+              order: 2;
+              /* Move the first image to the second position */
+            }
+
+            .flo-footer--314 .flo-footer-instagram-area__image:nth-child(2) {
+              order: 1;
+              /* Move the second image to the first position */
+            }
+
+            .flo-footer--314 .flo-footer-instagram-area__images {
+              --imagesGapMob: 0rem;
+              /* Adjust this as needed */
             }
           }
 
           @media (min-width:768px) {
-            .flo-footer--909 .flo-footer-instagram-area__image {
+            .flo-footer--314 .flo-footer-instagram-area__image {
               opacity: 0;
               filter: blur(5px);
               width: 640px;
@@ -6993,7 +7014,7 @@ opacity: 0!important;
           </div>
         </div>
         <style class='flo-core-style' media="screen">
-          .flo-footer--909 .flo-footer-copyrights-area {
+          .flo-footer--314 .flo-footer-copyrights-area {
             color: var(--scheme_1--text--default);
             background-color: var(--scheme_1--background--default);
             border-color: var(--scheme_1--text--default);
@@ -7025,7 +7046,6 @@ opacity: 0!important;
 
         </div>
       </div>
-
 
 
 

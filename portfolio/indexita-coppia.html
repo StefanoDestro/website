@@ -6399,7 +6399,7 @@ opacity: 0!important;
                         href="../indexita.html?lang=it" data-font='third_level/overline_2'>HOME</a></li>
                     <li id="menu-item-6149"
                       class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6138 current_page_item menu-item-6149 active">
-                      <a href="indexita-matrimoni.html" data-font='third_level/overline_2'>PORTFOLIO</a>
+                      <a href="indexita.html" data-font='third_level/overline_2'>PORTFOLIO</a>
                     </li>
                     <li id="menu-item-5011"
                       class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5011"><a
@@ -6579,7 +6579,7 @@ opacity: 0!important;
                   href="../indexita.html?lang=it" data-font='third_level/navigation'>HOME</a></li>
               <li
                 class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-6138 current_page_item menu-item-6149 active">
-                <a href="indexita-matrimoni.html" data-font='third_level/navigation'>PORTFOLIO</a>
+                <a href="indexita.html" data-font='third_level/navigation'>PORTFOLIO</a>
               </li>
               <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5011"><a
                   href="../about/indexita.html?lang=it" data-font='third_level/navigation'>SU DI ME</a></li>
@@ -6683,8 +6683,8 @@ opacity: 0!important;
               </h2>
 
               <div class="flo-block-category-switcher-1__links-list">
-                <!--<a href="indexita.html?lang=it" class="flo-block-category-switcher-1__category "
-                  data-font='third_level/overline_2'>TUTTE</a>-->
+                <a href="indexita.html?lang=it" class="flo-block-category-switcher-1__category "
+                  data-font='third_level/overline_2'>60 SECONDI</a>
                 <a href="indexita-matrimoni.html?lang=it?categ=matrimoni"
                   class="flo-block-category-switcher-1__category flo-block-category-switcher-1__category--active"
                   data-font='third_level/overline_2'>MATRIMONI</a>
@@ -6692,8 +6692,8 @@ opacity: 0!important;
                   data-font='third_level/overline_2'>BOUDOIR</a>-->
                 <a href="indexita-coppia.html?lang=it?categ=coppia" class="flo-block-category-switcher-1__category "
                   data-font='third_level/overline_2'>COPPIA</a>
-                <a href="indexita-family.html?lang=it?categ=family" class="flo-block-category-switcher-1__category "
-                  data-font='third_level/overline_2'>FAMILY</a>
+                <!-- <a href="indexita-family.html?lang=it?categ=family" class="flo-block-category-switcher-1__category "
+                  data-font='third_level/overline_2'>FAMILY</a> -->
                 <!--<a href="index340c.html?categ=underwater" class="flo-block-category-switcher-1__category "
                   data-font='third_level/overline_2'>UNDERWATER</a>-->
               </div>
@@ -6781,18 +6781,39 @@ opacity: 0!important;
           }
 
           .flo-footer--314 .flo-footer-instagram-area__images {
-            --imagesGapDesk: 0rem
+            --imagesGapDesk: 0rem;
+            display: flex;
+            /* Enable Flexbox */
+            flex-wrap: wrap;
+            /* Allow items to wrap */
           }
 
-          @media (max-width:767px) {
+          @media (max-width: 767px) {
 
-            .flo-footer--314 .flo-footer-instagram-area__image:nth-last-child(-n+2),
-            .flo-footer--314 .flo-footer-instagram-area__images .img-block:nth-last-child(-n+2) {
-              display: none
+            .flo-footer--314 .flo-footer-instagram-area__image,
+            .flo-footer--314 .flo-footer-instagram-area__images .img-block {
+              width: calc(33.333%);
+              /* Adjust width */
+              margin: 0px;
+              max-width: 33.33%;
+              /* Ensure images don't overflow their container */
+              height: auto;
+              /* Maintain aspect ratio */
+            }
+
+            .flo-footer--314 .flo-footer-instagram-area__image:first-child {
+              order: 2;
+              /* Move the first image to the second position */
+            }
+
+            .flo-footer--314 .flo-footer-instagram-area__image:nth-child(2) {
+              order: 1;
+              /* Move the second image to the first position */
             }
 
             .flo-footer--314 .flo-footer-instagram-area__images {
-              --imagesGapMob: 0rem
+              --imagesGapMob: 0rem;
+              /* Adjust this as needed */
             }
           }
 
