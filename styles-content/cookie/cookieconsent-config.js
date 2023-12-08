@@ -19,7 +19,19 @@ CookieConsent.run({
         necessary: {
             readOnly: true
         },
-        analytics: {}
+        analytics: {
+            readOnly: false,
+            autoClear: {
+                cookies: [
+                    {
+                        name: /^(_ga)/      //regex
+                    },
+                    {
+                        name: '_gid'        //string
+                    }
+                ]
+            }
+        }
     },
     language: {
         default: "en",
