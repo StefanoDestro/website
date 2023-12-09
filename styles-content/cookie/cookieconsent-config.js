@@ -243,25 +243,39 @@ CookieConsent.run({
         }
     },
     onAccept: (cookie) => {
-        // Check if analytics cookies are accepted
+        console.log("Consent given:", cookie);
         if (cookie.categories.analytics) {
+            console.log("Analytics consent given. Loading Google Analytics...");
             loadGoogleAnalytics();
+        } else {
+            console.log("Analytics consent not given.");
         }
-    }
+    },    
 });
 
-
-
 function loadGoogleAnalytics() {
-    // Load the Google Analytics script
+    console.log("Loading Google Analytics script...");
+
     const script = document.createElement('script');
     script.async = true;
     script.src = 'https://www.googletagmanager.com/gtag/js?id=G-FMSMK4VRMT';
-    document.head.appendChild(script);
 
-    // Initialize Google Analytics
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-    gtag('config', 'G-FMSMK4VRMT');
+    // Event listener for when the script has loaded
+    script.onload = () => {
+        console.log("Google Analytics script loaded.");
+
+        // Initialize Google Analytics after the script is loaded
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FMSMK4VRMT');
+
+        console.log("Google Analytics initialized.");
+    };
+
+    // Error handling
+    script.onerror = () => console.error("Error loading Google Analytics script.");
+
+    document.head.appendChild(script);
 }
+
