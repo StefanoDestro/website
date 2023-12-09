@@ -7044,8 +7044,158 @@ opacity: 0!important;
 
               </div>
 
+              <style>
+                .form-control {
+                    width: 100%;
+                    padding: 10px;
+                    margin: 10px 0;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                }
+            
+                .form-group {
+                    margin-bottom: 20px;
+                }
+            
+                .form-group label {
+                    display: block;
+                    margin-bottom: 5px;
+                }
+            
+                .submit-btn {
+                    background-color: #000000;
+                    color: #ffffff;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    width: 200px;
+                }
+            
+                .submit-btn:hover {
+                    background-color: #333333;
+                }
+            
+                .required-asterisk {
+                    color: red;
+                }
+                
+                form {
+                    font-family: 'Cormorant Garamond', serif;
+                }
+            </style>
+            
+            <form action="https://formspree.io/f/xeqbykvv" method="POST">
+                <!-- IL TUO NOME -->
+                <div class="form-group">
+                    <label for="name">IL TUO NOME<span class="required-asterisk">*</span></label>
+                    <input type="text" id="name" name="name" class="form-control width-100" placeholder="nome e cognome"
+                        required>
+                </div>
+            
+                <!-- NOME DEL PARTNER -->
+                <div class="form-group">
+                    <label for="partner_name">NOME PARTNER</label>
+                    <input type="text" id="partner_name" name="partner_name" class="form-control width-100"
+                        placeholder="nome e cognome">
+                </div>
+            
+                <!-- E-MAIL -->
+                <div class="form-group">
+                    <label for="email">E-MAIL<span class="required-asterisk">*</span></label>
+                    <input type="email" id="email" name="email" class="form-control width-100" placeholder="info@example.com"
+                        required>
+                </div>
+            
+                <!-- IL TUO NOME INSTA -->
+                <div class="form-group">
+                    <label for="insta_name">IL TUO NOME INSTA</label>
+                    <input type="text" id="insta_name" name="insta_name" class="form-control width-100"
+                        placeholder="@instaname">
+                </div>
+            
+                <!-- PER COSA CI VUOI -->
+                <div class="form-group">
+                    <label for="event_type">PER QUALE EVENTO VI INTERESSO?<span class="required-asterisk">*</span></label>
+                    <select id="event_type" name="event_type" class="form-control width-100" required>
+                        <option value="">Seleziona un'opzione</option>
+                        <option value="our_wedding">Il Nostro Matrimonio</option>
+                        <option value="our_elopement">La Nostra Fuga D'Amore</option>
+                        <option value="love_shoot">Servizio Fotografico D'Amore</option>
+                        <option value="family_session">Sessione Familiare</option>
+                        <option value="other">Altro</option>
+                    </select>
+                </div>
+            
+                <!-- QUANDO? -->
+                <div class="form-group">
+                    <label for="event_date">QUANDO?</label>
+                    <input type="text" id="event_date" name="event_date" class="form-control width-100"
+                        placeholder="e sei flessibile con la data?">
+                </div>
+            
+                <!-- LUOGO/I DELLA CERIMONIA/LOCATION -->
+                <div class="form-group">
+                    <label for="venue">LUOGO/I DELLA CERIMONIA/LOCATION</label>
+                    <input type="text" id="venue" name="venue" class="form-control width-100"
+                        placeholder="SE GIA' LO HAI, OVVIAMENTE!">
+                </div>
+            
+                <!-- COME CI HAI TROVATO? -->
+                <div class="form-group">
+                    <label for="referral">COME CI HAI TROVATO? <span class="required-asterisk">*</span></label>
+                    <select id="referral" name="referral" class="form-control width-100" required>
+                        <option value="">Seleziona un'opzione</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="google_search">Ricerca Google</option>
+                        <option value="pinterest">Pinterest</option>
+                        <option value="client_referral">Referral da altri Clienti</option>
+                        <option value="friends_family">Amici/Famiglia</option>
+                        <option value="other">Altro</option>
+                    </select>
+                </div>
+            
+                <!-- Pulsante Invia -->
+                <div class="form-group">
+                    <button type="submit" class="submit-btn form-control">INVIA</button>
+                </div>
+            </form>
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const form = document.querySelector('form');
+            
+                    form.addEventListener('submit', function (event) {
+                        // Previene l'invio predefinito del form
+                        event.preventDefault();
+            
+                        // Logica di validazione qui
+                        let isValid = true;
+                        const requiredFields = form.querySelectorAll('input[required], select[required]');
+            
+                        requiredFields.forEach(field => {
+                            if (!field.value.trim()) {
+                                isValid = false;
+                                field.style.borderColor = 'red'; // Evidenzia il campo in rosso
+                            } else {
+                                field.style.borderColor = ''; // Reimposta al valore predefinito
+                            }
+                        });
+            
+                        if (isValid) {
+                            // Se il form è valido, invialo
+                            form.submit();
+                        } else {
+                            alert('Per favore, compila tutti i campi richiesti.');
+                        }
+                    });
+                });
+            </script>
+            
+            
 
-              <div class="flo-block-contact-block-1__form-section flo-block-contact-block-1__form-section--custom">
+
+             <!-- <div class="flo-block-contact-block-1__form-section flo-block-contact-block-1__form-section--custom">
                 <p>
                 <div class="app-flo-forms app-flo-forms_70" data-form_id="70">
                   <form class="flo-form" enctype="multipart/form-data">
@@ -7067,7 +7217,8 @@ opacity: 0!important;
                   </form>
                 </div>
                 </p>
-              </div>
+              </div>-->
+
 
 
             </div>
@@ -7075,6 +7226,7 @@ opacity: 0!important;
           </div>
         </div>
       </div>
+      
 
 
 
@@ -7134,6 +7286,8 @@ opacity: 0!important;
             }
           }
         </style>
+        
+        
 
         <div class="flo-footer-instagram-area ">
 

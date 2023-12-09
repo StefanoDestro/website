@@ -7035,7 +7035,7 @@ opacity: 0!important;
               </div>
 
 
-              <div class="flo-block-contact-block-1__form-section flo-block-contact-block-1__form-section--custom">
+              <!--<div class="flo-block-contact-block-1__form-section flo-block-contact-block-1__form-section--custom">
                 <p>
                 <div class="app-flo-forms app-flo-forms_4392" data-form_id="4392">
                   <form class="flo-form" enctype="multipart/form-data" action="https://formspree.io/f/xeqbykvv" method="POST">
@@ -7058,24 +7058,157 @@ opacity: 0!important;
                   </form>
                 </div>
                 </p>
-              </div>
+              </div>-->
 
-              <!--<form
-              action="https://formspree.io/f/xeqbykvv"
-              method="POST"
-            >
-              <label>
-                Your email:
-                <input type="email" name="email">
-              </label>
-              <label>
-                Your message:
-                <textarea name="message"></textarea>
-              </label>
-             
-              <button type="submit">Send</button>
-            </form>-->
-            </div>
+              <style>
+              .form-control {
+                width: 100%;
+                padding: 10px;
+                margin: 10px 0;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+    
+            .form-group {
+                margin-bottom: 20px;
+            }
+    
+            .form-group label {
+                display: block;
+                margin-bottom: 5px;
+            }
+    
+            .submit-btn {
+                background-color: #000000;
+                color: #ffffff;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                width: 200px;
+            }
+    
+            .submit-btn:hover {
+                background-color: #333333;
+            }
+    
+            .required-asterisk {
+                color: red;
+            }
+            form {
+    font-family: 'Cormorant Garamond', serif;
+}
+        </style>
+
+              <form action="https://formspree.io/f/xeqbykvv" method="POST">
+                <!-- YOUR NAME -->
+                <div class="form-group">
+                    <label for="name">YOUR NAME<span class="required-asterisk">*</span></label>
+                    <input type="text" id="name" name="name" class="form-control width-100" placeholder="first & last name"
+                        required>
+                </div>
+        
+                <!-- NAME PARTNER -->
+                <div class="form-group">
+                    <label for="partner_name">NAME PARTNER</label>
+                    <input type="text" id="partner_name" name="partner_name" class="form-control width-100"
+                        placeholder="first & last name">
+                </div>
+        
+                <!-- E-MAIL -->
+                <div class="form-group">
+                    <label for="email">E-MAIL<span class="required-asterisk">*</span></label>
+                    <input type="email" id="email" name="email" class="form-control width-100" placeholder="info@example.com"
+                        required>
+                </div>
+        
+                <!-- YOUR INSTA NAME -->
+                <div class="form-group">
+                    <label for="insta_name">YOUR INSTA NAME</label>
+                    <input type="text" id="insta_name" name="insta_name" class="form-control width-100"
+                        placeholder="@instaname">
+                </div>
+        
+                <!-- WE WANT YOU FOR -->
+                <div class="form-group">
+                    <label for="event_type">WE WANT YOU FOR <span class="required-asterisk">*</span></label>
+                    <select id="event_type" name="event_type" class="form-control width-100" required>
+                        <option value="">Select an option</option>
+                        <option value="our_wedding">Our Wedding</option>
+                        <option value="our_elopement">Our Elopement</option>
+                        <option value="love_shoot">Love Shoot</option>
+                        <option value="family_session">Family Session</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+        
+        
+                <!-- WHEN? -->
+                <div class="form-group">
+                    <label for="event_date">WHEN?</label>
+                    <input type="text" id="event_date" name="event_date" class="form-control width-100"
+                        placeholder="and are you flexible with the date?">
+                </div>
+        
+                <!-- VENUE(S)/LOCATION(S) -->
+                <div class="form-group">
+                    <label for="venue">VENUE(S)/LOCATION(S)</label>
+                    <input type="text" id="venue" name="venue" class="form-control width-100"
+                        placeholder="IF YOU HAVE IT ALREADY, OF COURSE!">
+                </div>
+        
+                <!-- HOW DID YOU FIND ME? -->
+                <div class="form-group">
+                    <label for="referral">HOW DID YOU FIND ME? <span class="required-asterisk">*</span></label>
+                    <select id="referral" name="referral" class="form-control width-100" required>
+                        <option value="">Select an option</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="google_search">Google Search</option>
+                        <option value="pinterest">Pinterest</option>
+                        <option value="client_referral">Client Referral</option>
+                        <option value="friends_family">Friends/Family</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+        
+        
+                <!-- Submit Button -->
+                <div class="form-group">
+                    <button type="submit" class="submit-btn form-control">SEND</button>
+                </div>
+            </form>
+        
+            <script>
+                document.addEventListener("DOMContentLoaded", function () {
+                    const form = document.querySelector('form');
+        
+                    form.addEventListener('submit', function (event) {
+                        // Prevent the default form submission
+                        event.preventDefault();
+        
+                        // Validation logic here
+                        let isValid = true;
+                        const requiredFields = form.querySelectorAll('input[required], select[required]');
+        
+                        requiredFields.forEach(field => {
+                            if (!field.value.trim()) {
+                                isValid = false;
+                                field.style.borderColor = 'red'; // Highlighting the field in red
+                            } else {
+                                field.style.borderColor = ''; // Resetting to default
+                            }
+                        });
+        
+                        if (isValid) {
+                            // If the form is valid, submit it
+                            form.submit();
+                        } else {
+                            alert('Please fill out all required fields.');
+                        }
+                    });
+                });
+            </script>
+
 
           </div>
         </div>
@@ -7182,7 +7315,7 @@ opacity: 0!important;
                 style="--font-size: 0.93743141153082rem;--line-height: 1.86em;--letter-spacing: 0.03em;">
                 <div class="flex-block__text-content  height-auto">
                   <p><span style="color:var(--scheme_1--text--default)">Problems with the contact form? Mail directly to
-                      info @spaghetti.al.riverbero.com with all the info above </span><br /><span
+                      spaghetti.al.riverbero@gmail.com with all the info above.</span><br /><span
                       style="color:var(--scheme_1--text--default)">Thank you! </span></p>
                 </div>
               </div>
