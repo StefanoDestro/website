@@ -49,8 +49,8 @@ CookieConsent.run({
         translations: {
             en: {
                 consentModal: {
-                    title: "Hello traveller, it's cookie time!",
-                    description: "We use cookies to personalize content and ads, to provide social media features, and to analyze our traffic. We also share information about your use of our site with our social media, advertising, and analytics partners who may combine it with other information that you’ve provided to them or that they’ve collected from your use of their services. By clicking 'Accept all', you consent to our use of cookies.",
+                    title: "Hello traveller, cookies like a wedding cake?",
+                    description: "We use cookies to personalize content and ads, to provide social media features, and to analyze our traffic. By clicking 'Accept all', you consent to our use of cookies.",
                     acceptAllBtn: "Accept all",
                     acceptNecessaryBtn: "Reject all",
                     showPreferencesBtn: "Manage preferences",
@@ -88,7 +88,7 @@ CookieConsent.run({
             
             it: {
                 consentModal: {
-                    title: "Ciao viaggiatore, è tempo di biscotti!",
+                    title: "Ciao viaggiatore, biscotti come torta nuziale?",
                     description: "Utilizziamo i cookie per personalizzare contenuti e annunci, fornire funzionalità di social media e analizzare il nostro traffico. Condividiamo anche informazioni sul tuo utilizzo del nostro sito con i nostri partner di social media, pubblicità e analisi, che possono combinarle con altre informazioni che hai fornito loro o che hanno raccolto dal tuo utilizzo dei loro servizi. Cliccando su 'Accetta tutto', acconsenti all'uso dei cookie.",
                     acceptAllBtn: "Accetta tutto",
                     acceptNecessaryBtn: "Rifiuta tutto",
@@ -128,7 +128,7 @@ CookieConsent.run({
             de: {
                 consentModal: {
                     title: "Hallo Reisende, es ist Kekszeit!",
-                    description: "Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien bereitzustellen und unseren Traffic zu analysieren. Wir teilen auch Informationen über Ihre Nutzung unserer Website mit unseren Partnern für soziale Medien, Werbung und Analysen, die diese mit anderen Informationen kombinieren können, die Sie ihnen bereitgestellt haben oder die sie durch Ihre Nutzung ihrer Dienste gesammelt haben. Durch Klicken auf 'Alle akzeptieren' stimmen Sie der Verwendung von Cookies zu.",
+                    description: "Wir verwenden Cookies, um Inhalte und Anzeigen zu personalisieren, Funktionen für soziale Medien bereitzustellen und unseren Traffic zu analysieren. Durch Klicken auf 'Alle akzeptieren' stimmen Sie der Verwendung von Cookies zu.",
                     acceptAllBtn: "Alle akzeptieren",
                     acceptNecessaryBtn: "Alle ablehnen",
                     showPreferencesBtn: "Einstellungen verwalten",
@@ -166,7 +166,7 @@ CookieConsent.run({
             es: {
                 consentModal: {
                     title: "Hola viajero, es la hora de las galletas!",
-                    description: "Usamos cookies para personalizar contenido y anuncios, proporcionar funciones de redes sociales y analizar nuestro tráfico. También compartimos información sobre su uso de nuestro sitio con nuestros socios de redes sociales, publicidad y análisis, quienes pueden combinarla con otra información que usted les haya proporcionado o que hayan recopilado de su uso de sus servicios. Al hacer clic en 'Aceptar todo', usted consiente el uso de cookies.",
+                    description: "Usamos cookies para personalizar contenido y anuncios, proporcionar funciones de redes sociales y analizar nuestro tráfico. Al hacer clic en 'Aceptar todo', usted consiente el uso de cookies.",
                     acceptAllBtn: "Aceptar todo",
                     acceptNecessaryBtn: "Rechazar todo",
                     showPreferencesBtn: "Gestionar preferencias",
@@ -204,7 +204,7 @@ CookieConsent.run({
             fr: {
                 consentModal: {
                     title: "Bonjour voyageur, c'est l'heure des cookies!",
-                    description: "Nous utilisons des cookies pour personnaliser le contenu et les annonces, fournir des fonctionnalités de médias sociaux et analyser notre trafic. Nous partageons également des informations sur votre utilisation de notre site avec nos partenaires de médias sociaux, de publicité et d'analyse, qui peuvent les combiner avec d'autres informations que vous leur avez fournies ou qu'ils ont collectées lors de votre utilisation de leurs services. En cliquant sur 'Accepter tout', vous consentez à l'utilisation de cookies.",
+                    description: "Nous utilisons des cookies pour personnaliser le contenu et les annonces, fournir des fonctionnalités de médias sociaux et analyser notre trafic. En cliquant sur 'Accepter tout', vous consentez à l'utilisation de cookies.",
                     acceptAllBtn: "Accepter tout",
                     acceptNecessaryBtn: "Tout rejeter",
                     showPreferencesBtn: "Gérer les préférences",
@@ -242,9 +242,8 @@ CookieConsent.run({
             
         }
     },
-    onAccept: (cookie) => {
-        console.log("Consent given:", cookie);
-        if (cookie.categories.analytics) {
+    onAccept: function(cookies){        
+        if(cc.allowedCategory('analytics_cookies')){
             console.log("Analytics consent given. Loading Google Analytics...");
             loadGoogleAnalytics();
         } else {
