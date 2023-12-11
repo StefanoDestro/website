@@ -1,49 +1,78 @@
 import 'https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v3.0.0-rc.17/dist/cookieconsent.umd.js';
 
-CookieConsent.run({
-    cookie: {
-        expiresAfterDays: acceptType => {
-            return acceptType === 'all'
-                ? 365.25
-                : 5;
-        }
-    },
-    mode: 'opt-in',
-    autorun: true,
-    hide_from_bots: true,
-    guiOptions: {
-        consentModal: {
-            layout: "cloud",
-            position: "bottom center",
-            equalWeightButtons: true,
-            flipButtons: false
-        },
-        preferencesModal: {
-            layout: "box",
-            position: "right",
-            equalWeightButtons: true,
-            flipButtons: false
-        }
-    },
-    categories: {
-        necessary: {
-            readOnly: true
-        },
-        analytics: {
-            readOnly: false,
-            autoClear: {
-                cookies: [
-                    {
-                        name: /^(_ga)/      //regex
-                    },
-                    {
-                        name: '_gid'        //string
-                    }
-                ]
+
+window.addEventListener('load', function () {
+
+    // obtain plugin
+    var cc = initCookieConsent();
+
+    // run plugin with your configuration
+    cc.run({
+
+        guiOptions: {
+            consentModal: {
+                layout: "cloud",
+                position: "bottom center",
+                equalWeightButtons: true,
+                flipButtons: false
+            },
+            preferencesModal: {
+                layout: "box",
+                position: "right",
+                equalWeightButtons: true,
+                flipButtons: false
             }
-        }
-    },
-    language: {
+        },
+
+        // current_lang: 'cs',
+        autoclear_cookies: true,                   // default: false
+        theme_css: 'cookieconsent.css',  // ? replace with a valid path
+        page_scripts: false,                        // default: false
+
+        mode: 'opt-in',                          // default: 'opt-in'; value: 'opt-in' or 'opt-out'
+        // delay: 0,                               // default: 0
+        auto_language: 'browser',                      // default: null; could also be 'browser' or 'document'
+        // autorun: true,                          // default: true
+        // force_consent: false,                   // default: false
+        // hide_from_bots: false,                  // default: false
+        // remove_cookie_tables: false             // default: false
+        // cookie_name: 'cc_cookie',               // default: 'cc_cookie'
+        cookie_expiration: 182,                 // default: 182 (days)
+        // cookie_necessary_only_expiration: 182   // default: disabled
+        // cookie_domain: location.hostname,       // default: current domain
+        // cookie_path: '/',                       // default: root
+        // cookie_same_site: 'Lax',                // default: 'Lax'
+        // use_rfc_cookie: false,                  // default: false
+        // revision: 0,                            // default: 0
+
+
+onFirstAction: function (user_preferences, cookie) {
+                // callback triggered only once on the first accept/reject action
+            },
+
+            onAccept: function (cookie) {
+                if (cc.allowedCategory('analytics')) {
+                    gtag('consent', 'update', {
+                        'analytics_storage': 'granted'
+                    });
+                }
+               
+            },
+
+            onChange: function (cookie, changed_categories) {
+                // callback triggered when user changes preferences after consent has already been given
+               if (cc.allowedCategory('analytics')) {
+                    gtag('consent', 'update', {
+                        'analytics_storage': 'granted'
+                    });
+                }
+                if (!cc.allowedCategory('analytics')) {
+                    gtag('consent', 'update', {
+                        'analytics_storage': 'denied'
+                    });
+                }
+            },
+       language: {
         default: "en",
         autoDetect: "browser",
         translations: {
@@ -244,5 +273,5 @@ CookieConsent.run({
     },
 })
 
-
+});
 
