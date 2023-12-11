@@ -54,7 +54,7 @@ CookieConsent.run({
                     acceptAllBtn: "Accept all",
                     acceptNecessaryBtn: "Reject all",
                     showPreferencesBtn: "Manage preferences",
-                    footer: "<a href=\"https://stefanodestro.com/privacypolicy/\">Privacy Policy</a>\n<a href=\"https://stefanodestro.com/privacypolicy/\">Terms and conditions</a>"
+                    footer: "<a href=\"https://stefanodestro.com/privacypolicy/\">Privacy Policy</a>\n"
                 },
                 preferencesModal: {
                     title: "Consent Preferences Center",
@@ -93,7 +93,7 @@ CookieConsent.run({
                     acceptAllBtn: "Accetta tutto",
                     acceptNecessaryBtn: "Rifiuta tutto",
                     showPreferencesBtn: "Gestisci preferenze",
-                    footer: "<a href=\"https://stefanodestro.com/privacypolicy/\">Informativa sulla privacy</a>\n<a href=\"https://stefanodestro.com/privacypolicy/\">Termini e condizioni</a>"
+                    footer: "<a href=\"https://stefanodestro.com/privacypolicy/\">Informativa sulla privacy</a>\n"
                 },
                 preferencesModal: {
                     title: "Centro preferenze per il consenso",
@@ -132,7 +132,7 @@ CookieConsent.run({
                     acceptAllBtn: "Alle akzeptieren",
                     acceptNecessaryBtn: "Alle ablehnen",
                     showPreferencesBtn: "Einstellungen verwalten",
-                    footer: "<a href=\"https://stefanodestro.com/privacypolicy/\">Datenschutz</a>\n<a href=\"https://stefanodestro.com/privacypolicy/\">Bedingungen und Konditionen</a>"
+                    footer: "<a href=\"https://stefanodestro.com/privacypolicy/\">Datenschutz</a>\n"
                 },
                 preferencesModal: {
                     title: "Präferenzen für die Zustimmung",
@@ -170,7 +170,7 @@ CookieConsent.run({
                     acceptAllBtn: "Aceptar todo",
                     acceptNecessaryBtn: "Rechazar todo",
                     showPreferencesBtn: "Gestionar preferencias",
-                    footer: "<a href=\"https://stefanodestro.com/privacypolicy/\">Política de privacidad</a>\n<a href=\"https://stefanodestro.com/privacypolicy/\">Términos y condiciones</a>"
+                    footer: "<a href=\"https://stefanodestro.com/privacypolicy/\">Política de privacidad</a>\n"
                 },
                 preferencesModal: {
                     title: "Preferencias de Consentimiento",
@@ -208,7 +208,7 @@ CookieConsent.run({
                     acceptAllBtn: "Accepter tout",
                     acceptNecessaryBtn: "Tout rejeter",
                     showPreferencesBtn: "Gérer les préférences",
-                    footer: "<a href=\"https://stefanodestro.com/privacypolicy/\">Politique de confidentialité</a>\n<a href=\"https://stefanodestro.com/privacypolicy/\">Termes et conditions</a>"
+                    footer: "<a href=\"https://stefanodestro.com/privacypolicy/\">Politique de confidentialité</a>\n"
                 },
                 preferencesModal: {
                     title: "Préférences de cookies",
@@ -243,7 +243,7 @@ CookieConsent.run({
         }
     },
     onAccept: function(cookies){        
-        if(cc.allowedCategory('analytics_cookies')){
+        if(cc.allowedCategory('analytics')){
             console.log("Analytics consent given. Loading Google Analytics...");
             loadGoogleAnalytics();
         } else {
